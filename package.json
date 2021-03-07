@@ -1,0 +1,16 @@
+{
+  "name": "freeathome-login-automation",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Attempt to automate login to a Busch Jaeger free@home access point, simulating browser behaviour",
+  "main": "login.js",
+  "dependencies": {
+    "puppeteer": "~7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node login.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julius van Dis (vandis.j@gmail.com)",
+  "license": ""
+}
