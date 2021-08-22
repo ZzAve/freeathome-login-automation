@@ -18,6 +18,7 @@ run:
 			-e HOST \
 			-e USERNAME \
 			-e PASSWORD \
+			-v ${PWD}/screenshots:/usr/src/app/screenshots \
 			${docker-tag}
 .PHONY: run
 
