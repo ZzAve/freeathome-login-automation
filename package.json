@@ -4,7 +4,7 @@
   "description": "Attempt to automate login to a Busch Jaeger free@home access point, simulating browser behaviour",
   "main": "login.js",
   "dependencies": {
-    "puppeteer": "~7.1.0"
+    "puppeteer": "^10.2.0"
   },
   "devDependencies": {},
   "scripts": {
