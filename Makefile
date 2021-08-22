@@ -10,6 +10,8 @@ build:
 	docker build -t ${docker-tag} .
 .PHONY: build
 
+run-local:
+	npm start
 run:
 	docker run --rm -i \
 			--name ${docker-name} \

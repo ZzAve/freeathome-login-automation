@@ -1,6 +1,11 @@
 #FROM buildkite/puppeteer:7.1.0
 FROM zzave/docker-puppeteer:latest
 
+#RUN apt-get update \
+#	&& apt-get install chromium chromium-codecs-ffmpeg -y \
+#	&& rm -rf /var/lib/apt/lists/*
+
+#RUN echo $(which chromium-browser) && false
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -16,4 +21,4 @@ ENV NODE_ENV=production
 USER node
 
 
-CMD [ "node", "login.js"]
+CMD [ "node", "--unhandled-rejections=strict", "login.js"]
