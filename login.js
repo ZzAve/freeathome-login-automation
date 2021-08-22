@@ -55,7 +55,7 @@ const takeScreenshot = async (page, name) => {
 
         await page.waitForSelector('div.qx-android-dialog', {timeout: 500})
         await takeScreenshot(page, "01x.compatibility-issues");
-        await page.click('div.qx-android-dialog > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div')
+        await page.tap('div.qx-android-dialog > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div')
         console.log("Clicked OK to close popup")
     } catch (e) {
         console.log("No popup saying element doesn't exist, yay")
@@ -76,7 +76,7 @@ const takeScreenshot = async (page, name) => {
     // const coOrdinates = await myObject.boundingBox()
     const coOrdinates = textCoords
     console.log(`Coordinates: ${coOrdinates}`, coOrdinates);
-    await page.mouse.click( coOrdinates.x+coOrdinates.width/2 , coOrdinates.y+coOrdinates.height/2 )
+    await page.touchscreen.tap( coOrdinates.x+coOrdinates.width/2 , coOrdinates.y+coOrdinates.height/2 )
     // await page.click(firstUserSelector);
     console.log(`Clicked user "${userName}" element`)
 
@@ -94,13 +94,13 @@ const takeScreenshot = async (page, name) => {
     }
 
     await page.waitForTimeout(3000)
-    await page.click(`${firstUserSelector} input`);
+    await page.tap(`${firstUserSelector} input`);
     await page.keyboard.type(password, {delay: 10});
     console.log(`Filled in password for user`)
 
     await takeScreenshot(page, "03.passwod-filled");
 
-    await page.click('div.qx-bj-wizard-sep-button-last', {delay: 2000});
+    await page.tap('div.qx-bj-wizard-sep-button-last');
 
 
     await page.waitForTimeout(2000)
